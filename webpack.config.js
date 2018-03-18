@@ -8,6 +8,7 @@ var CleanWebpackPlugin = require("clean-webpack-plugin");
 
 var entries = {
   application: [
+    './assets/js/ntc.js',
     './node_modules/jquery-ujs/src/rails.js',
     './assets/css/application.scss',
   ],

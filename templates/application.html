@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Naming things is a hard problem</title>
+    <title><%= hexcolor %> - Naming things is a hard problem</title>
     <%= stylesheetTag("application.css") %>
     <meta name="csrf-param" content="authenticity_token" />
     <meta name="csrf-token" content="<%= authenticity_token %>" />
@@ -16,5 +16,15 @@
     </div>
 
     <%= javascriptTag("application.js") %>
+
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      var n_match  = ntc.name("<%= hexcolor %>");
+      n_rgb        = n_match[0]; // This is the RGB value of the closest matching color
+      n_name       = n_match[1]; // This is the text string for the name of the match
+      n_exactmatch = n_match[2]; // True if exact color match, False if close-match
+  
+      alert(n_name);});
+    </script>
   </body>
 </html>
